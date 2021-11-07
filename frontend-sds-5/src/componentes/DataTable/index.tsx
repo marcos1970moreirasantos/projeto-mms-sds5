@@ -2,7 +2,7 @@ import axios from "axios";
 import Pagination from "componentes/Pagination";
 import { useEffect } from "react";
 import { useState } from "react";
-import { SalePage } from "types/sale";
+import { SalePage } from "type/sale";
 import { formatLocalDate } from "utils/formats";
 import { BASE_URL } from "utils/request";
 
@@ -43,14 +43,14 @@ const DataTable = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {page.content?.map(item => (
-                            <tr key={item.id}>
+                        {page.content?.map((_item: any) => (
+                            <tr key={_item.id}>
 
-                                <td>{formatLocalDate(item.date, "dd/MM/yyyy")}</td>
-                                <td>{item.seller.name}</td>
-                                <td>{item.visited}</td>
-                                <td>{item.deals}</td>
-                                <td>{item.amount.toFixed(2)}</td>
+                                <td>{formatLocalDate(_item.date, "dd/MM/yyyy")}</td>
+                                <td>{_item.seller.name}</td>
+                                <td>{_item.visited}</td>
+                                <td>{_item.deals}</td>
+                                <td>{_item.amount.toFixed(2)}</td>
                             </tr>
                         ))}
                     </tbody>

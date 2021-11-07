@@ -2,7 +2,7 @@ import axios from 'axios';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import Chart from 'react-apexcharts';
-import { SaleSum } from 'types/sale';
+import { SaleSum } from 'type/sale';
 import { BASE_URL } from 'utils/request';
 
 type ChartData = {
