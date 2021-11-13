@@ -21,7 +21,7 @@ const DonutChart = () => {
         axios.get(BASE_URL + '/sales/amount-by-seller')
             .then(response => {
                 const data = response.data as SaleSum[];
-                const myLabels = data.map(data => data.SellerName);
+                const myLabels = data.map(data => data.sellerName);
                 const mySeries = data.map(data => data.sum);
 
                 setChartData({ labels: myLabels, series: mySeries });
